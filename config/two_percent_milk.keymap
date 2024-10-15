@@ -8,14 +8,24 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-/ {
+ / {
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-                &kp X
-                &kp Z
+                &kp A    // Klawisz 1: "A" na warstwie 1
+                &mo layer2 // Klawisz 2: zmiana na warstwę 2
+                // Kolumna 2
+                &kp Q    // Klawisz 1: "Q" na warstwie 2
+                &kp NONE // Klawisz 2: brak akcji
+            >;
+        };
+
+        layer2 {
+            bindings = <
+                &kp NONE // Brak akcji w warstwie 2 dla klawisza 1
+                &kp A    // Klawisz 2: "A" na warstwie 1
             >;
         };
     };
